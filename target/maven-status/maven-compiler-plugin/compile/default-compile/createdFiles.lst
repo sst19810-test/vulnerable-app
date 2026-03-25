@@ -1,9 +1,0 @@
-com/example/vulnerable/controller/FileController.class
-com/example/vulnerable/model/User.class
-com/example/vulnerable/util/SecurityUtil.class
-com/example/vulnerable/controller/SearchController.class
-com/example/vulnerable/service/FileService.class
-com/example/vulnerable/util/XmlParser.class
-com/example/vulnerable/controller/UserController.class
-com/example/vulnerable/service/UserService.class
-com/example/vulnerable/VulnerableApplication.class
