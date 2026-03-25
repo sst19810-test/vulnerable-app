@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - main
 
 
 jobs:
@@ -36,4 +36,4 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=sst19810-test_JournalApps_914eb623-4723-46c1-bf2d-8b78addf25b1 -Dsonar.projectName='JournalApps'
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=sst19810-test_vulnerable-app_1c11c597-c344-45a0-8189-610c99f45421 -Dsonar.projectName='vulnerable-app'
