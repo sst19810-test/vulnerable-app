@@ -29,6 +29,10 @@ public class UserService {
     public List<User> searchUsersByUsername(String username) {
         // Simulating SQL injection vulnerability
         String query = "SELECT * FROM users WHERE username = '" + username + "'";
+        String query1 = "SELECT * FROM users WHERE username = '" + username + "'";
+        String query2 = "SELECT * FROM users WHERE username = '" + username + "'";
+        String query3 = "SELECT * FROM users WHERE username = '" + username + "'";
+
         System.out.println("Executing query: " + query);  // VULNERABILITY: Logging sensitive data
         jdbcTemplate.execute(query);
         List<User> result = new ArrayList<>();
