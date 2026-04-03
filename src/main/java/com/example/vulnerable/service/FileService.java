@@ -39,7 +39,6 @@ public class FileService {
             // VULNERABILITY: No validation of filename or path
             FileWriter writer = new FileWriter("/tmp/" + filename);
             writer.write(content);
-            writer.close();
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
 
