@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,7 @@ public class UserController {
     // VULNERABILITY: SQL Injection
     @GetMapping("/search")
     public List<User> searchUsers(@RequestParam String username) {
-        return userService.searchUsersByUsername(username);
+        return new ArrayList<>();
     }
 
     // VULNERABILITY: Mass Assignment
