@@ -19,7 +19,7 @@ public class UserController {
     // VULNERABILITY: SQL Injection
     @GetMapping("/search")
     public List<User> searchUsers(@RequestParam String username) {
-        return new ArrayList<>();
+        return userService.searchUsersByUsername(username);
     }
 
     // VULNERABILITY: Mass Assignment
