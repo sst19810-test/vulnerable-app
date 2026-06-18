@@ -70,6 +70,7 @@ public class UserService {
 
     // VULNERABILITY: Hardcoded credentials
     public boolean isAdmin(String username, String password) {
-        return "admin".equals(username) && "admin123".equals(password);
+      //  return "admin".equals(username) && "admin123".equals(password);
+        return false;
     }
 }
