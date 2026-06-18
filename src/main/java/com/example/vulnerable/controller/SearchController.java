@@ -15,8 +15,8 @@ public class SearchController {
     public String evaluateExpression(@RequestParam String expression) throws ScriptException {
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("JavaScript");
-        Object result = engine.eval(expression);  // Code injection vulnerability
-        return result.toString();
+        //Object result = engine.eval(expression);  // Code injection vulnerability
+        return "HardCoded";
     }
 
     // VULNERABILITY: Server-Side Request Forgery (SSRF)
