@@ -53,6 +53,15 @@
     <scope>compile</scope>
 </dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc -->
+		<!-- Source: https://mvnrepository.com/artifact/com.ritense.valtimo/process-document -->
+<dependency>
+    <groupId>com.ritense.valtimo</groupId>
+    <artifactId>process-document</artifactId>
+    <version>12.0.0.RELEASE</version>
+    <type>pom</type>
+    <scope>runtime</scope>
+</dependency>
+		
 <dependency>
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-jdbc</artifactId>
