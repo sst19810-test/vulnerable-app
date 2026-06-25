@@ -7,7 +7,7 @@ import java.util.Base64;
 public class SecurityUtil {
 
     // VULNERABILITY: Hardcoded encryption key
-    // private static final String SECRET_KEY = "1234567890123456";
+     private static final String SECRET_KEY = "1234567890123456";
 
     // VULNERABILITY: Weak encryption algorithm (DES)
     private static final String ALGORITHM = "DES";
