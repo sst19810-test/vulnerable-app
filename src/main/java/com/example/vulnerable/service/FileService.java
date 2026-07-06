@@ -61,10 +61,32 @@ public class FileService {
         }
     }
 
-    // VULNERABILITY: Command Injection
+    private static final java.util.Set<String> ALLOWED_COMMANDS = java.util.Set.of(
+        "ls", "date", "whoami", "hostname", "uptime"
+    );
+
     public String executeCommand(String cmd) throws IOException {
-        Runtime runtime = Runtime.getRuntime();
-        Process process = runtime.exec(cmd);  // Directly executing user input
+        String[] parts = cmd.strip().split("\\s+");
+        if (parts.length == 0) {
+            throw new IllegalArgumentException("Empty command");
+        }
+
+        String command = parts[0];
+        if (!ALLOWED_COMMANDS.contains(command)) {
+            throw new IllegalArgumentException("Command not allowed: " + command);
+        }
+
+        for (String part : parts) {
+            if (part.contains("..") || part.contains(";") || part.contains("|")
+                    || part.contains("&") || part.contains("`") || part.contains("$")
+                    || part.contains(">") || part.contains("<")) {
+                throw new IllegalArgumentException("Invalid characters in command arguments");
+            }
+        }
+
+        ProcessBuilder processBuilder = new ProcessBuilder(parts);
+        processBuilder.redirectErrorStream(true);
+        Process process = processBuilder.start();
 
         BufferedReader reader = new BufferedReader(
             new InputStreamReader(process.getInputStream())
