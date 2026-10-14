@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Map;
 
+import java.util.regex.Pattern;
+
 @SpringBootApplication
 @RestController
 public class VulnerableApplication {
@@ -27,6 +29,12 @@ public class VulnerableApplication {
     public List<Map<String, Object>> searchUsers(@RequestParam String username) {
         String query = "SELECT * FROM users WHERE username = '" + username + "'";
         //return null;
-        return jdbcTemplate.queryForList(query);
+        //return jdbcTemplate.queryForList(query);
+    }
+
+   
+ 
+    public class RangeDemo {
+        private static final Pattern VALID = Pattern.compile("[A-z]+");
     }
 }
