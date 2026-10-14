@@ -26,7 +26,7 @@ public class VulnerableApplication {
     @GetMapping("/api/users/search")
     public List<Map<String, Object>> searchUsers(@RequestParam String username) {
         String query = "SELECT * FROM users WHERE username = '" + username + "'";
-        return null;
-        //return jdbcTemplate.queryForList(query);
+        //return null;
+        return jdbcTemplate.queryForList(query);
     }
 }
